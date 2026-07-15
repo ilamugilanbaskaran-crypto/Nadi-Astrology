@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sri Agasthiya Maha Siva Nadi Jyothida Nilayam</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              DEFAULT: '#1a1a2e',
+              dark: '#0f0f1d',
+              light: '#24243e',
+              glow: 'rgba(26, 26, 46, 0.9)',
+            },
+            gold: {
+              DEFAULT: '#d4af37',
+              light: '#f3e5ab',
+              dark: '#aa7c11',
+              glow: 'rgba(212, 175, 55, 0.3)',
+            }
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'Lora', 'Georgia', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          boxShadow: {
+            'gold-glow': '0 0 15px rgba(212, 175, 55, 0.2)',
+            'gold-glow-lg': '0 0 30px rgba(212, 175, 55, 0.35)',
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-navy-dark text-[#e5d5b0] font-sans antialiased overflow-x-hidden relative min-h-screen">
+
+
+  <!-- Twinkling Star Background Overlay -->
+  <div id="starfield" class="absolute inset-0 pointer-events-none z-0 overflow-hidden"></div>
+
+  <!-- Ambient Glowing Backgrounds -->
+  <div class="absolute top-20 left-1/4 w-96 h-96 bg-gold-glow rounded-full blur-[120px] pointer-events-none opacity-40"></div>
+  <div class="absolute top-[40%] right-1/4 w-[500px] h-[500px] bg-gold-glow rounded-full blur-[150px] pointer-events-none opacity-20"></div>
+  <div class="absolute bottom-20 left-1/3 w-80 h-80 bg-gold-glow rounded-full blur-[100px] pointer-events-none opacity-30"></div>
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-50 glass-panel border-b border-gold/20 transition-all duration-300 bg-navy-dark/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Business Logo & Name -->
+      <a href="#home" class="flex items-center space-x-3 group">
+        <div class="relative flex items-center justify-center w-12 h-12 rounded-full border border-gold/30 bg-navy-dark shadow-gold-glow transition-all duration-300 group-hover:border-gold">
+          <i data-lucide="sparkles" class="w-6 h-6 text-gold group-hover:rotate-12 transition-transform duration-300"></i>
+        </div>
+        <div>
+          <h1 class="font-serif font-bold text-gold text-lg sm:text-xl md:text-2xl tracking-wider leading-none">
+            SRI AGASTHIYA MAHA SIVA NADI
+          </h1>
+          <p class="font-serif text-[10px] sm:text-xs text-gold/70 tracking-[0.2em] uppercase mt-1">
+            Jyothida Nilayam • Nanded
+          </p>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="#home" class="nav-link font-serif text-sm tracking-widest text-[#e5d5b0]/90 hover:text-gold transition-colors uppercase">Home</a>
+        <a href="#services" class="nav-link font-serif text-sm tracking-widest text-[#e5d5b0]/90 hover:text-gold transition-colors uppercase">Services</a>
+        <a href="#about" class="nav-link font-serif text-sm tracking-widest text-[#e5d5b0]/90 hover:text-gold transition-colors uppercase">About Us</a>
+        <a href="#contact" class="nav-link font-serif text-sm tracking-widest text-[#e5d5b0]/90 hover:text-gold transition-colors uppercase">Contact & Booking</a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-gold hover:text-gold-light focus:outline-none" aria-label="Toggle Navigation Menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden glass-panel border-b border-gold/20 bg-navy-dark/95 backdrop-blur-lg absolute w-full left-0 px-6 py-6 space-y-4 shadow-xl">
+      <a href="#home" class="block font-serif text-base tracking-widest text-[#e5d5b0] hover:text-gold py-2 transition-colors uppercase">Home</a>
+      <a href="#services" class="block font-serif text-base tracking-widest text-[#e5d5b0] hover:text-gold py-2 transition-colors uppercase">Services</a>
+      <a href="#about" class="block font-serif text-base tracking-widest text-[#e5d5b0] hover:text-gold py-2 transition-colors uppercase">About Us</a>
+      <a href="#contact" class="block font-serif text-base tracking-widest text-[#e5d5b0] hover:text-gold py-2 transition-colors uppercase">Contact & Booking</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative z-10 min-h-[90vh] flex items-center justify-center pt-24 pb-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto text-center space-y-8">
+      <div class="flex flex-col items-center space-y-3">
+        <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full border border-gold/30 bg-navy-light/40 text-gold-light text-xs sm:text-sm font-serif tracking-widest uppercase shadow-gold-glow animate-float">
+          <i data-lucide="award" class="w-4 h-4 text-gold"></i>
+          <span>Over 35+ Years of Sacred Experience</span>
+        </div>
+        <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full border border-gold/30 bg-gold/10 text-gold-light text-xs sm:text-sm font-serif tracking-widest uppercase shadow-gold-glow animate-float" style="animation-delay: 0.5s;">
+          <i data-lucide="users" class="w-4 h-4 text-gold"></i>
+          <span>4th Generation Nadi Readers</span>
+        </div>
+      </div>
+
+      <h1 class="font-serif text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight">
+        Discover Your Destiny Written on <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-light via-gold to-gold-dark font-semibold">Ancient Leaves</span>
+      </h1>
+
+      <p class="max-w-2xl mx-auto font-serif text-base sm:text-lg md:text-xl text-[#e5d5b0]/80 leading-relaxed italic">
+        Welcome to Sri Agasthiya Maha Siva Nadi Jyothida Nilayam. Guided by Maharishi Agastya's ancient wisdom, our authentic palm-leaf manuscripts reveal your past, present, and future karmic path, offering solutions for a harmonious life.
+      </p>
+
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
+        <a href="#contact" class="px-8 py-4 rounded-md bg-gradient-to-r from-gold-dark via-gold to-gold-light text-navy-dark font-serif font-semibold tracking-wider hover:opacity-90 transition-all duration-300 transform hover:scale-[1.03] animate-pulse-glow shadow-gold-glow-lg text-center w-full sm:w-auto">
+          Book Your Reading
+        </a>
+        <a href="#services" class="px-8 py-4 rounded-md border border-gold/40 hover:border-gold hover:bg-gold/10 text-gold font-serif tracking-wider transition-all duration-300 text-center w-full sm:w-auto">
+          Explore Nadi Chapters
+        </a>
+      </div>
+
+      <!-- Sacred Symbol / Mandala Art Spacer -->
+      <div class="flex justify-center pt-10 opacity-70">
+        <svg class="w-24 h-24 text-gold animate-spin" style="animation-duration: 25s;" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+          <circle cx="50" cy="50" r="45" stroke-dasharray="6 6" stroke-width="0.5"/>
+          <circle cx="50" cy="50" r="38" stroke-width="1"/>
+          <polygon points="50,5 95,50 50,95 5,50" stroke-width="0.5"/>
+          <polygon points="50,15 85,50 50,85 15,50" stroke-width="0.5"/>
+          <circle cx="50" cy="50" r="10" stroke-dasharray="2 2" stroke-width="1"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="reveal relative z-10 py-24 px-4 sm:px-6 lg:px-8 border-t border-gold/10 bg-navy/20">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold tracking-wide text-white">
+          Our Services & Kandam
+        </h2>
+        <div class="h-[1px] w-24 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto"></div>
+        <p class="font-serif text-sm sm:text-base text-[#e5d5b0]/70 italic">
+          Explore the chapters written for your soul. Nadi Jyotish is divided into 12 main chapters of life and 4 special kandam outlining specific remedies, initiations, and future alignments.
+        </p>
+      </div>
+
+      <!-- Grid layout: Accordions & Feature Box -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        
+        <!-- Accordion Columns (Span 2) -->
+        <div class="lg:col-span-2 space-y-8">
+          
+          <!-- The 12 Nadi Chapters Accordion -->
+          <div class="glass-panel rounded-xl overflow-hidden p-6 shadow-xl">
+            <h3 class="font-serif text-xl sm:text-2xl font-bold text-gold border-b border-gold/20 pb-4 mb-6 flex items-center">
+              <i data-lucide="book-open" class="w-6 h-6 mr-3"></i>
+              The 12 Primary Nadi Chapters
+            </h3>
+            
+            <div class="space-y-4" id="chapters-accordion">
+              <!-- JS will load chapters dynamically or we list them directly for instant rendering -->
+              
+              <!-- Chapter 1 -->
+              <div class="accordion-item border border-gold/10 rounded-lg overflow-hidden bg-navy-dark/40 transition-colors">
+                <button class="accordion-trigger w-full flex items-center justify-between p-4 font-serif text-left text-white hover:text-gold focus:outline-none">
+                  <span class="font-medium text-sm sm:text-base">Chapter 1: General Reading (Lagna)</span>
+                  <i data-lucide="chevron-down" class="w-5 h-5 text-gold transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content">
+                  <div class="p-4 border-t border-gold/10 text-sm text-[#e5d5b0]/80 leading-relaxed font-sans">
+                    Provides a comprehensive lifespan overview including family environment, professional status, financial standing, longevity, general fortunes, and guidance on identifying the remaining chapters containing detailed insights.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Chapter 2 -->
+              <div class="accordion-item border border-gold/10 rounded-lg overflow-hidden bg-navy-dark/40 transition-colors">
+                <button class="accordion-trigger w-full flex items-center justify-between p-4 font-serif text-left text-white hover:text-gold focus:outline-none">
+                  <span class="font-medium text-sm sm:text-base">Chapter 2: Education, Wealth & Family</span>
+                  <i data-lucide="chevron-down" class="w-5 h-5 text-gold transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content">
+                  <div class="p-4 border-t border-gold/10 text-sm text-[#e5d5b0]/80 leading-relaxed font-sans">
+                    Focuses on your financial growth, eyes/eyesight, speech powers, educational path, relationships with family members, and the accumulation of assets.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Chapter 3 -->
+              <div class="accordion-item border border-gold/10 rounded-lg overflow-hidden bg-navy-dark/40 transition-colors">
+                <button class="accordion-trigger w-full flex items-center justify-between p-4 font-serif text-left text-white hover:text-gold focus:outline-none">
+                  <span class="font-medium text-sm sm:text-base">Chapter 3: Siblings & Courage</span>
+                  <i data-lucide="chevron-down" class="w-5 h-5 text-gold transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content">
+                  <div class="p-4 border-t border-gold/10 text-sm text-[#e5d5b0]/80 leading-relaxed font-sans">
+                    Details relationships with siblings (both younger and elder), their successes, mutual help, courage, and mental determination.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Chapter 4 -->
+              <div class="accordion-item border border-gold/10 rounded-lg overflow-hidden bg-navy-dark/40 transition-colors">
+                <button class="accordion-trigger w-full flex items-center justify-between p-4 font-serif text-left text-white hover:text-gold focus:outline-none">
+                  <span class="font-medium text-sm sm:text-base">Chapter 4: Mother, Vehicles & Properties</span>
+                  <i data-lucide="chevron-down" class="w-5 h-5 text-gold transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content">
+                  <div class="p-4 border-t border-gold/10 text-sm text-[#e5d5b0]/80 leading-relaxed font-sans">
+                    Analyzes relationship with mother, mother's longevity, houses owned, land assets, vehicles purchased, and general material pleasures in life.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Chapter 5 -->
+              <div class="accordion-item border border-gold/10 rounded-lg overflow-hidden bg-navy-dark/40 transition-colors">
+                <button class="accordion-trigger w-full flex items-center justify-between p-4 font-serif text-left text-white hover:text-gold focus:outline-none">
+                  <span class="font-medium text-sm sm:text-base">Chapter 5: Children, Intelligence & Previous Karma</span>
+                  <i data-lucide="chevron-down" class="w-5 h-5 text-gold transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content">
+                  <div class="p-4 border-t border-gold/10 text-sm text-[#e5d5b0]/80 leading-relaxed font-sans">
+                    Details prospects of having children, their success, intelligence, causes for childlessness (if any), and connections with your past life's spiritual actions.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Chapter 6 -->
+              <div class="accordion-item border border-gold/10 rounded-lg overflow-hidden bg-navy-dark/40 transition-colors">
+                <button class="accordion-trigger w-full flex items-center justify-between p-4 font-serif text-left text-white hover:text-gold focus:outline-none">
+                  <span class="font-medium text-sm sm:text-base">Chapter 6: Diseases, Debts & Enemies</span>
+                  <i data-lucide="chevron-down" class="w-5 h-5 text-gold transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content">
+                  <div class="p-4 border-t border-gold/10 text-sm text-[#e5d5b0]/80 leading-relaxed font-sans">
+                    Covers health status, specific diseases, loan liabilities, legal conflicts, lawsuits, actions of enemies, and how to conquer obstacles.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Chapter 7 -->
+              <div class="accordion-item border border-gold/10 rounded-lg overflow-hidden bg-navy-dark/40 transition-colors">
+                <button class="accordion-trigger w-full flex items-center justify-between p-4 font-serif text-left text-white hover:text-gold focus:outline-none">
+                  <span class="font-medium text-sm sm:text-base">Chapter 7: Marriage & Spouse</span>
+                  <i data-lucide="chevron-down" class="w-5 h-5 text-gold transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content">
+                  <div class="p-4 border-t border-gold/10 text-sm text-[#e5d5b0]/80 leading-relaxed font-sans">
+                    Provides details about the timing of marriage, the direction of origin, characteristics of the spouse, mutual compatibility, and future marital life.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Chapter 8 -->
+              <div class="accordion-item border border-gold/10 rounded-lg overflow-hidden bg-navy-dark/40 transition-colors">
+                <button class="accordion-trigger w-full flex items-center justify-between p-4 font-serif text-left text-white hover:text-gold focus:outline-none">
+                  <span class="font-medium text-sm sm:text-base">Chapter 8: Longevity & Accidents</span>
+                  <i data-lucide="chevron-down" class="w-5 h-5 text-gold transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content">
+                  <div class="p-4 border-t border-gold/10 text-sm text-[#e5d5b0]/80 leading-relaxed font-sans">
+                    Identifies span of life, threats, accidents, critical life events, planetary dangers, and exact astrological periods indicating departure.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Chapter 9 -->
+              <div class="accordion-item border border-gold/10 rounded-lg overflow-hidden bg-navy-dark/40 transition-colors">
+                <button class="accordion-trigger w-full flex items-center justify-between p-4 font-serif text-left text-white hover:text-gold focus:outline-none">
+                  <span class="font-medium text-sm sm:text-base">Chapter 9: Father, Fortune & Spiritual Gurus</span>
+                  <i data-lucide="chevron-down" class="w-5 h-5 text-gold transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content">
+                  <div class="p-4 border-t border-gold/10 text-sm text-[#e5d5b0]/80 leading-relaxed font-sans">
+                    Outlines details about your father's longevity and health, financial luck, fortunes, charity, pilgrimages, and your relationship with spiritual teachers or mentors.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Chapter 10 -->
+              <div class="accordion-item border border-gold/10 rounded-lg overflow-hidden bg-navy-dark/40 transition-colors">
+                <button class="accordion-trigger w-full flex items-center justify-between p-4 font-serif text-left text-white hover:text-gold focus:outline-none">
+                  <span class="font-medium text-sm sm:text-base">Chapter 10: Career, Profession & Business</span>
+                  <i data-lucide="chevron-down" class="w-5 h-5 text-gold transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content">
+                  <div class="p-4 border-t border-gold/10 text-sm text-[#e5d5b0]/80 leading-relaxed font-sans">
+                    Forecasts professional achievements, career paths, job switches, business gains, honors, status in society, and travels related to work.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Chapter 11 -->
+              <div class="accordion-item border border-gold/10 rounded-lg overflow-hidden bg-navy-dark/40 transition-colors">
+                <button class="accordion-trigger w-full flex items-center justify-between p-4 font-serif text-left text-white hover:text-gold focus:outline-none">
+                  <span class="font-medium text-sm sm:text-base">Chapter 11: Profits & Second Marriage</span>
+                  <i data-lucide="chevron-down" class="w-5 h-5 text-gold transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content">
+                  <div class="p-4 border-t border-gold/10 text-sm text-[#e5d5b0]/80 leading-relaxed font-sans">
+                    Deals with secondary streams of income, massive gains, ease of life, and secondary marital union details where applicable.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Chapter 12 -->
+              <div class="accordion-item border border-gold/10 rounded-lg overflow-hidden bg-navy-dark/40 transition-colors">
+                <button class="accordion-trigger w-full flex items-center justify-between p-4 font-serif text-left text-white hover:text-gold focus:outline-none">
+                  <span class="font-medium text-sm sm:text-base">Chapter 12: Expenditure, Foreign Travels & Moksha</span>
+                  <i data-lucide="chevron-down" class="w-5 h-5 text-gold transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content">
+                  <div class="p-4 border-t border-gold/10 text-sm text-[#e5d5b0]/80 leading-relaxed font-sans">
+                    Focuses on financial expenditures, losses, foreign residency/travels, next birth circumstances, and the ultimate path to spiritual liberation (Moksha).
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+
+          <!-- The 4 Special Kandam Accordion -->
+          <div class="glass-panel rounded-xl overflow-hidden p-6 shadow-xl">
+            <h3 class="font-serif text-xl sm:text-2xl font-bold text-gold border-b border-gold/20 pb-4 mb-6 flex items-center">
+              <i data-lucide="scroll" class="w-6 h-6 mr-3"></i>
+              The 4 Special Kandam
+            </h3>
+            
+            <div class="space-y-4" id="kandam-accordion">
+              
+              <!-- Shanti Parihar -->
+              <div class="accordion-item border border-gold/10 rounded-lg overflow-hidden bg-navy-dark/40 transition-colors">
+                <button class="accordion-trigger w-full flex items-center justify-between p-4 font-serif text-left text-white hover:text-gold focus:outline-none">
+                  <span class="font-medium text-sm sm:text-base">Shanti Parihar (Remedial Chapter)</span>
+                  <i data-lucide="chevron-down" class="w-5 h-5 text-gold transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content">
+                  <div class="p-4 border-t border-gold/10 text-sm text-[#e5d5b0]/80 leading-relaxed font-sans">
+                    Identifies planetary obstacles, curses, and sins committed in previous births. Prescribes specific remedial actions (Pariharas) such as specific temple visits, charity, and simple rituals to clear obstacles.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Diksha -->
+              <div class="accordion-item border border-gold/10 rounded-lg overflow-hidden bg-navy-dark/40 transition-colors">
+                <button class="accordion-trigger w-full flex items-center justify-between p-4 font-serif text-left text-white hover:text-gold focus:outline-none">
+                  <span class="font-medium text-sm sm:text-base">Diksha (Protection & Mantras)</span>
+                  <i data-lucide="chevron-down" class="w-5 h-5 text-gold transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content">
+                  <div class="p-4 border-t border-gold/10 text-sm text-[#e5d5b0]/80 leading-relaxed font-sans">
+                    Prescribes sacred talismans (Yantras), copper/silver protective plates, and holy mantras to recite for shield against evil eyes, jealousy, and negative cosmic influences.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Aushadh -->
+              <div class="accordion-item border border-gold/10 rounded-lg overflow-hidden bg-navy-dark/40 transition-colors">
+                <button class="accordion-trigger w-full flex items-center justify-between p-4 font-serif text-left text-white hover:text-gold focus:outline-none">
+                  <span class="font-medium text-sm sm:text-base">Aushadh (Medicinal & Health Remedies)</span>
+                  <i data-lucide="chevron-down" class="w-5 h-5 text-gold transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content">
+                  <div class="p-4 border-t border-gold/10 text-sm text-[#e5d5b0]/80 leading-relaxed font-sans">
+                    Focuses on health and longevity by prescribing traditional medical/herbal recommendations alongside spiritual methods to cure long-term chronic ailments.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Dasha Bhukti -->
+              <div class="accordion-item border border-gold/10 rounded-lg overflow-hidden bg-navy-dark/40 transition-colors">
+                <button class="accordion-trigger w-full flex items-center justify-between p-4 font-serif text-left text-white hover:text-gold focus:outline-none">
+                  <span class="font-medium text-sm sm:text-base">Dasha Bhukti (Planetary Timelines)</span>
+                  <i data-lucide="chevron-down" class="w-5 h-5 text-gold transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content">
+                  <div class="p-4 border-t border-gold/10 text-sm text-[#e5d5b0]/80 leading-relaxed font-sans">
+                    Details the planetary main periods (Dashas) and sub-periods (Bhuktis) of your current life phase, specifying precise timings of fortunes, challenges, and matching remedies.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Highlighted Feature Box & Booking Prompt (Span 1) -->
+        <div class="space-y-8">
+          
+          <!-- Specialized Consultations Feature Box -->
+          <div class="glass-panel rounded-xl p-8 border border-gold/40 animate-pulse-glow shadow-gold-glow-lg flex flex-col justify-between relative overflow-hidden bg-navy-light/40">
+            <!-- Mandala decorative watermarked path -->
+            <div class="absolute -right-10 -bottom-10 opacity-10 pointer-events-none text-gold">
+              <svg class="w-48 h-48" fill="none" stroke="currentColor" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="40" stroke-width="2"/>
+                <polygon points="50,10 90,50 50,90 10,50" stroke-width="1"/>
+              </svg>
+            </div>
+
+            <div class="space-y-6 relative z-10">
+              <div class="inline-block px-3 py-1 rounded bg-gold/15 border border-gold/30 text-gold text-xs font-serif uppercase tracking-widest">
+                Exclusive Guidance
+              </div>
+              <h4 class="font-serif text-2xl font-bold text-white leading-tight">
+                Specialized Consultations
+              </h4>
+              <p class="font-serif text-[#e5d5b0]/90 text-sm leading-relaxed italic border-l-2 border-gold pl-4 py-1">
+                "राजनीति के विषय और व्यक्तिगत समस्याओं के लिए विशेष परामर्श।"
+              </p>
+              <p class="text-sm text-[#e5d5b0]/80 leading-relaxed">
+                We offer targeted readings designed for deep personal crises, court litigations, family resolutions, and strategic political career planning (राजनीति के विषय), helping you align your actions with favorable transits.
+              </p>
+              <ul class="space-y-2 text-xs text-gold-light/95">
+                <li class="flex items-center">
+                  <i data-lucide="check" class="w-4 h-4 mr-2 text-gold"></i> Political career paths & election transits
+                </li>
+                <li class="flex items-center">
+                  <i data-lucide="check" class="w-4 h-4 mr-2 text-gold"></i> Resolve long-standing family property disputes
+                </li>
+                <li class="flex items-center">
+                  <i data-lucide="check" class="w-4 h-4 mr-2 text-gold"></i> Personal crisis resolution rituals
+                </li>
+              </ul>
+            </div>
+            
+            <div class="pt-8 relative z-10">
+              <a href="#contact" class="block w-full text-center py-3 bg-gold text-navy-dark font-serif font-bold text-sm rounded hover:bg-gold-light transition-all duration-300">
+                Request Special Session
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick FAQ / Insight Card -->
+          <div class="glass-panel rounded-xl p-8 space-y-6 bg-navy-dark/60">
+            <h4 class="font-serif text-lg font-bold text-white border-b border-gold/10 pb-3 flex items-center">
+              <i data-lucide="help-circle" class="w-5 h-5 text-gold mr-2"></i>
+              How Nadi Works
+            </h4>
+            <div class="space-y-4 text-sm text-[#e5d5b0]/80 leading-relaxed">
+              <p>
+                <strong>Thumb Impressions:</strong> Readings are traced using your thumbprint (Right thumb for men, Left thumb for women) to locate your soul's specific bundle.
+              </p>
+              <p>
+                <strong>The Leaf Search:</strong> Once the bundle is found, the practitioner recites statements, and you confirm with only a "Yes" or "No". Once fully matched, the reading starts.
+              </p>
+            </div>
+          </div>
+
+          <!-- Agathiyar Swamy Image Card -->
+          <div class="glass-panel rounded-xl overflow-hidden border border-gold/30 shadow-gold-glow-lg bg-navy-light/10">
+            <img src="assets/images/agathiyar_swamy.jpg" alt="Maharishi Agastya (Agathiyar Swamy)" class="w-full h-auto object-cover border-b border-gold/20" />
+            <div class="p-4 text-center">
+              <p class="font-serif text-sm text-gold-light tracking-wider font-semibold">Maharishi Agastya</p>
+              <p class="text-[10px] text-gold/70 uppercase tracking-widest mt-1">The Divine Author of Nadi Astrology</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="reveal relative z-10 py-24 px-4 sm:px-6 lg:px-8 border-t border-gold/10">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        
+        <!-- About Visual / Mandala (Span 5) -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-72 h-72 sm:w-96 sm:h-96 flex items-center justify-center">
+            <!-- Outer Gold border decoration -->
+            <div class="absolute inset-0 rounded-full border border-gold/25 animate-spin" style="animation-duration: 40s;"></div>
+            <div class="absolute inset-4 rounded-full border border-gold/10 border-dashed animate-spin" style="animation-duration: 20s; animation-direction: reverse;"></div>
+            <!-- Center Graphic (Representing the ancient palm leaf) -->
+            <div class="w-56 h-56 sm:w-72 sm:h-72 rounded-full glass-panel-heavy border-2 border-gold/30 flex flex-col justify-center items-center p-6 text-center shadow-gold-glow">
+              <i data-lucide="scroll-text" class="w-16 h-16 text-gold mb-4 animate-float"></i>
+              <span class="font-serif text-xs uppercase tracking-widest text-gold mb-1">Sri Agasthiya</span>
+              <span class="font-serif text-lg font-bold text-white leading-tight">Palm-Leaf Manuscripts</span>
+              <span class="text-[10px] text-gold/70 mt-2 font-serif italic">Preserved through Generations</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- About Text Detail (Span 7) -->
+        <div class="lg:col-span-7 space-y-8">
+          <div class="space-y-4">
+            <span class="font-serif text-sm text-gold tracking-widest uppercase block">Our Philosophy & Lineage</span>
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white leading-tight">
+              Honoring the Sages of Astrology
+            </h2>
+            <div class="h-[1px] w-20 bg-gold my-2"></div>
+          </div>
+
+          <div class="space-y-6 text-base text-[#e5d5b0]/85 leading-relaxed font-serif italic">
+            <p>
+              "Nadi Jyotish is not mere prediction. It is a cosmic blueprint composed by Sage Agastya thousands of years ago. It represents the path chosen for your soul, waiting to be uncovered at the exact divine moment you seek it."
+            </p>
+          </div>
+
+          <div class="space-y-6 text-sm text-[#e5d5b0]/80 leading-relaxed font-sans">
+            <p>
+              We are blessed with dedicated practitioners carrying over <strong>35+ years of sacred experience</strong> in reading and interpreting the ancient Vatteluttu (old Tamil script) inscribed on palm leaves.
+            </p>
+            <p>
+              Having guided thousands of seekers globally, our mission is to offer completely authentic readings, translating the complex poetic verses of the sages into practical, simple guidance for modern life.
+            </p>
+          </div>
+
+          <!-- Practitioners Columns -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6 mb-8">
+            <div class="glass-panel p-4 rounded-lg border border-gold/15 bg-navy-dark/40 flex items-center space-x-3 shadow-gold-glow">
+              <div class="w-10 h-10 rounded-full border border-gold/25 flex items-center justify-center bg-navy-dark text-gold">
+                <i data-lucide="user" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="font-serif font-bold text-white text-sm tracking-wider">C. Baskar</h4>
+                <p class="text-[10px] text-gold tracking-widest uppercase font-semibold">Nadi Reader</p>
+              </div>
+            </div>
+            <div class="glass-panel p-4 rounded-lg border border-gold/15 bg-navy-dark/40 flex items-center space-x-3 shadow-gold-glow">
+              <div class="w-10 h-10 rounded-full border border-gold/25 flex items-center justify-center bg-navy-dark text-gold">
+                <i data-lucide="user" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="font-serif font-bold text-white text-sm tracking-wider">M. Thamarai Selvam</h4>
+                <p class="text-[10px] text-gold tracking-widest uppercase font-semibold">Nadi Reader</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Stats -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-4 border-t border-gold/10">
+            <div>
+              <h5 class="font-serif text-3xl font-bold text-gold">35+</h5>
+              <p class="text-xs text-[#e5d5b0]/60 uppercase tracking-wider mt-1">Years of Service</p>
+            </div>
+            <div>
+              <h5 class="font-serif text-3xl font-bold text-gold">4th</h5>
+              <p class="text-xs text-[#e5d5b0]/60 uppercase tracking-wider mt-1">Generation Nadi Readers</p>
+            </div>
+            <div>
+              <h5 class="font-serif text-3xl font-bold text-gold">100%</h5>
+              <p class="text-xs text-[#e5d5b0]/60 uppercase tracking-wider mt-1">Authentic Nadi Readers</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Booking Section -->
+  <section id="contact" class="reveal relative z-10 py-24 px-4 sm:px-6 lg:px-8 border-t border-gold/10 bg-navy/20">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold tracking-wide text-white">
+          Book Your Sacred Reading
+        </h2>
+        <div class="h-[1px] w-24 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto"></div>
+        <p class="font-serif text-sm sm:text-base text-[#e5d5b0]/70 italic">
+          Schedule your session by submitting your birth information. We will locate your specific palm leaf index prior to your session.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Contact Details Column (Span 5) -->
+        <div class="lg:col-span-5 space-y-8">
+          
+          <!-- Office Location Card -->
+          <div class="glass-panel rounded-xl p-8 space-y-6">
+            <h4 class="font-serif text-xl font-bold text-white border-b border-gold/10 pb-3 flex items-center">
+              <i data-lucide="map-pin" class="w-5 h-5 text-gold mr-3"></i>
+              Our Location
+            </h4>
+            
+            <div class="space-y-4">
+              <p class="font-serif text-gold text-lg font-semibold">Nanded Branch Office</p>
+              <p class="text-sm text-[#e5d5b0]/80 leading-relaxed font-sans">
+                Flat No. 9, P. L. Apartment,<br>
+                In front of Manaspure Coaching Classes,<br>
+                Vivek Nagar, Nanded,<br>
+                Maharashtra, India.
+              </p>
+            </div>
+          </div>
+
+          <!-- Operating Hours Card -->
+          <div class="glass-panel rounded-xl p-8 space-y-6">
+            <h4 class="font-serif text-xl font-bold text-white border-b border-gold/10 pb-3 flex items-center">
+              <i data-lucide="clock" class="w-5 h-5 text-gold mr-3"></i>
+              Operating Hours
+            </h4>
+            
+            <div class="space-y-2">
+              <div class="flex justify-between text-sm">
+                <span class="text-[#e5d5b0]/60">Tuesday – Sunday:</span>
+                <span class="font-serif text-gold font-semibold">10:00 AM – 7:00 PM</span>
+              </div>
+              <div class="flex justify-between text-sm mt-2 pt-2 border-t border-gold/5">
+                <span class="text-[#e5d5b0]/60">Monday:</span>
+                <span class="font-serif text-red-400 font-medium">Holiday / Closed</span>
+              </div>
+              <p class="text-xs text-[#e5d5b0]/50 italic pt-2">
+                *Prior appointments are recommended to ensure leaf availability.
+              </p>
+            </div>
+          </div>
+
+          <!-- Stylized Phone Placeholder Card -->
+          <div class="glass-panel rounded-xl p-8 space-y-6 border border-gold/30 bg-navy-light/20 shadow-gold-glow">
+            <h4 class="font-serif text-xl font-bold text-white border-b border-gold/10 pb-3 flex items-center">
+              <i data-lucide="phone-call" class="w-5 h-5 text-gold mr-3"></i>
+              Direct Helpline
+            </h4>
+            
+            <div class="space-y-3">
+              <p class="text-xs text-[#e5d5b0]/65 uppercase tracking-wider">Call or WhatsApp for enquiries:</p>
+              <div class="p-4 bg-navy-dark/80 rounded border border-gold/15 space-y-3">
+                <div class="flex items-center justify-between">
+                  <a href="tel:+919823358804" class="font-mono text-gold-light text-sm sm:text-base tracking-wider font-semibold hover:text-gold transition-colors flex items-center">
+                    <i data-lucide="phone" class="w-4 h-4 mr-2 text-gold"></i> +91 98233 58804
+                  </a>
+                </div>
+                <div class="flex items-center justify-between border-t border-gold/10 pt-2">
+                  <a href="tel:+917350263137" class="font-mono text-gold-light text-sm sm:text-base tracking-wider font-semibold hover:text-gold transition-colors flex items-center">
+                    <i data-lucide="phone" class="w-4 h-4 mr-2 text-gold"></i> +91 73502 63137
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Booking Form Column (Span 7) -->
+        <div class="lg:col-span-7">
+          <div class="glass-panel rounded-xl p-8 shadow-2xl relative">
+            
+            <h4 class="font-serif text-xl sm:text-2xl font-bold text-white border-b border-gold/10 pb-4 mb-6 flex items-center">
+              <i data-lucide="calendar" class="w-6 h-6 text-gold mr-3"></i>
+              Appointment Booking Form
+            </h4>
+
+            <!-- Feedback Alert Banner -->
+            <div id="form-feedback" class="hidden mb-6 p-4 rounded border font-sans text-sm"></div>
+
+            <form id="booking-form" class="space-y-6">
+              
+              <!-- Name & Email Inputs -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label for="name" class="block text-xs uppercase tracking-wider text-gold-light font-semibold">Full Name</label>
+                  <input type="text" id="name" name="name" required placeholder="e.g. Your Name" 
+                    class="w-full bg-navy-dark/95 border border-gold/20 rounded px-4 py-3 text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors font-sans placeholder-[#e5d5b0]/30 text-sm">
+                </div>
+                <div class="space-y-2">
+                  <label for="email" class="block text-xs uppercase tracking-wider text-gold-light font-semibold">Email Address</label>
+                  <input type="email" id="email" name="email" required placeholder="e.g. nadi@example.com" 
+                    class="w-full bg-navy-dark/95 border border-gold/20 rounded px-4 py-3 text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors font-sans placeholder-[#e5d5b0]/30 text-sm">
+                </div>
+              </div>
+
+              <!-- Date of Birth & Time of Birth -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label for="dob" class="block text-xs uppercase tracking-wider text-gold-light font-semibold">Date of Birth</label>
+                  <input type="date" id="dob" name="dob" required 
+                    class="w-full bg-navy-dark/95 border border-gold/20 rounded px-4 py-3 text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors font-sans text-sm">
+                </div>
+                <div class="space-y-2">
+                  <label for="tob" class="block text-xs uppercase tracking-wider text-gold-light font-semibold">Time of Birth</label>
+                  <input type="time" id="tob" name="tob" required 
+                    class="w-full bg-navy-dark/95 border border-gold/20 rounded px-4 py-3 text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors font-sans text-sm">
+                </div>
+              </div>
+
+              <!-- Location of Birth & Phone Number -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label for="pob" class="block text-xs uppercase tracking-wider text-gold-light font-semibold">Location / Place of Birth</label>
+                  <div class="relative">
+                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <i data-lucide="map" class="h-5 w-5 text-gold/45"></i>
+                    </span>
+                    <input type="text" id="pob" name="pob" required placeholder="e.g. Nanded, Maharashtra" 
+                      class="w-full bg-navy-dark/95 border border-gold/20 rounded pl-10 pr-4 py-3 text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors font-sans placeholder-[#e5d5b0]/30 text-sm">
+                  </div>
+                </div>
+                <div class="space-y-2">
+                  <label for="phone" class="block text-xs uppercase tracking-wider text-gold-light font-semibold">Phone Number</label>
+                  <div class="relative">
+                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <i data-lucide="phone" class="h-5 w-5 text-gold/45"></i>
+                    </span>
+                    <input type="tel" id="phone" name="phone" required placeholder="e.g. +91 98765 43210" 
+                      class="w-full bg-navy-dark/95 border border-gold/20 rounded pl-10 pr-4 py-3 text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors font-sans placeholder-[#e5d5b0]/30 text-sm">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Extra Note / Comments (Optional) -->
+              <div class="space-y-2">
+                <label for="notes" class="block text-xs uppercase tracking-wider text-gold-light font-semibold">Notes / Specific Concerns (Optional)</label>
+                <textarea id="notes" name="notes" rows="3" placeholder="Specify if interested in personal/political consultations..." 
+                  class="w-full bg-navy-dark/95 border border-gold/20 rounded px-4 py-3 text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors font-sans placeholder-[#e5d5b0]/30 text-sm"></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="pt-4">
+                <button type="submit" id="submit-btn" class="w-full py-4 bg-gradient-to-r from-gold-dark via-gold to-gold-light hover:opacity-90 text-navy-dark font-serif font-bold tracking-wider rounded transition-all duration-300 shadow-gold-glow flex items-center justify-center space-x-2">
+                  <span>Request Appointment</span>
+                  <i data-lucide="send" class="w-4 h-4"></i>
+                </button>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="relative z-10 border-t border-gold/20 bg-navy-dark py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+      
+      <!-- Footer Brand -->
+      <div class="text-center md:text-left">
+        <h4 class="font-serif text-gold text-lg tracking-wider font-bold">SRI AGASTHIYA MAHA SIVA NADI JYOTHIDA NILAYAM</h4>
+        <p class="text-xs text-[#e5d5b0]/55 mt-1 font-serif">Serving Seekers with Authenticity and Faith for 35+ Years</p>
+      </div>
+
+      <!-- Quick Nav Links -->
+      <div class="flex flex-wrap justify-center gap-6 text-sm">
+        <a href="#home" class="hover:text-gold transition-colors">Home</a>
+        <a href="#services" class="hover:text-gold transition-colors">Chapters</a>
+        <a href="#about" class="hover:text-gold transition-colors">Practitioners</a>
+        <a href="#contact" class="hover:text-gold transition-colors">Booking</a>
+      </div>
+
+      <!-- Footer Copy -->
+      <div class="text-center md:text-right text-xs text-[#e5d5b0]/40">
+        <p>&copy; 2026 Sri Agasthiya Maha Siva Nadi. All rights reserved.</p>
+        <p class="mt-1">Nadi Jyothida Nilayam Nanded Branch Office</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- JavaScript Behavior File -->
+  <script src="script.js"></script>
+</body>
+</html>
